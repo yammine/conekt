@@ -1,0 +1,19 @@
+<% if @person.errors.any? %>
+  <ul>
+  <% @person.errors.full_messages.each do |err| %>
+    <li><%= err %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+<%= simple_form_for @person, html: {class: 'form-vertical'} do |f| %>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %>
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %>
+  <%= f.label :age %>
+  <%= f.number_field :age %>
+  <%= f.label :gender %>
+  <%= f.text_field :gender %>
+  <%= f.submit %>
+<% end %>

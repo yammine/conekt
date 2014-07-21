@@ -6,7 +6,8 @@ class Person
   field :gender,     type: String
 
 
-   
+  validates :first_name, :last_name, :age, :gender, presence: true
+  validates :age, numericality: true 
 
 
 end
